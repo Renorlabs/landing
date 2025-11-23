@@ -106,7 +106,7 @@ export function ComparisonSection() {
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <Image src="/images/renor-logo.png" alt="Renor Labs" fill className="object-contain" />
+                        <Image src="/renor-logo.png" alt="Renor Labs" fill className="object-contain" />
                       </motion.div>
                       <div className="font-heading text-lg font-bold flex items-center gap-2">
                         Renor Labs

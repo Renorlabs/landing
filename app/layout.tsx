@@ -17,24 +17,30 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Renor Labs - Premium Product Studio",
-  description: "We don't just design, we solve your brand's biggest challenges",
-  generator: "v0.app",
+  title: "Renor Labs — AI-First Product Studio",
+  description: "Renor Labs helps founders turn ideas into polished, scalable MVPs using AI-driven development and modern system design.",
+  generator: "renorlabs.com",
+  openGraph: {
+    title: "Renor Labs — AI-First Product Studio",
+    description: "Renor Labs helps founders turn ideas into polished, scalable MVPs using AI-driven development and modern system design.",
+    images: ["/renor-logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Renor Labs — AI-First Product Studio",
+    description: "Renor Labs helps founders turn ideas into polished, scalable MVPs using AI-driven development and modern system design.",
+    images: ["/renor-logo.png"],
+  },
+  metadataBase: new URL("https://renorlabs.com"),
+  alternates: {
+    canonical: "https://renorlabs.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: "/favicon.ico",
     apple: "/apple-icon.png",
   },
 }
