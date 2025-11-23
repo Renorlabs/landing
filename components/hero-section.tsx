@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+import { ExpressionDot } from "@/components/ui/expression-dot"
+
 export function HeroSection() {
   const [index, setIndex] = useState(0)
   const words = ["faster", "stable", "sleeky", "robust"]
@@ -29,7 +31,7 @@ export function HeroSection() {
             className="relative flex items-baseline justify-center"
           >
             <h1 className="font-heading text-[12rem] font-black leading-none tracking-tighter text-foreground sm:text-[16rem] md:text-[20rem]">
-              r<span className="text-[0.3em] text-[var(--renor-orange)]">.</span>
+              r<span className="inline-flex align-baseline ml-[0.02em]"><ExpressionDot className="h-[0.10em] w-[0.10em]" /></span>
             </h1>
 
             {/* Painted effect */}
@@ -37,7 +39,7 @@ export function HeroSection() {
               initial={{ opacity: 0, pathLength: 0 }}
               animate={{ opacity: 1, pathLength: 1 }}
               transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-              className="absolute inset-0 z-[-1] -rotate-12 mix-blend-multiply dark:mix-blend-screen"
+              className="absolute inset-0 z-[-1] -rotate-12 mix-blend-multiply dark:mix-blend-screen left-[-7%] top-[-13%]"
             >
               <svg
                 viewBox="0 0 400 400"
@@ -47,7 +49,7 @@ export function HeroSection() {
                   d="M100,200 Q150,50 200,200 T300,200"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="80"
+                  strokeWidth="70"
                   strokeLinecap="round"
                   filter="url(#noise)"
                   initial={{ pathLength: 0, opacity: 0 }}
@@ -71,7 +73,7 @@ export function HeroSection() {
                   d="M50,180 C60,100 40,50 90,40 C120,30 150,60 140,150 C135,180 110,190 80,170"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="25"
+                  strokeWidth="20"
                   strokeLinecap="round"
                   strokeDasharray="10 5"
                   initial={{ pathLength: 0 }}

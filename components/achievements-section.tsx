@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion"
+import { motion, useInView, useMotionValue, useSpring, useAnimation, animate } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { useEffect, useRef, useState } from "react"
 
@@ -25,101 +25,126 @@ const achievements = [
   },
 ]
 
-function MoodEmoji() {
-  const [mood, setMood] = useState<"neutral" | "happy" | "angry" | "laugh">("neutral")
-  const ref = useRef<HTMLDivElement>(null)
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+function AnalogClock() {
+  const hourRotate = useMotionValue(0)
+  const minuteRotate = useMotionValue(0)
+  const secondRotate = useMotionValue(0)
+  
+  const [isAnimating, setIsAnimating] = useState(false)
+  const controls = useAnimation()
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!ref.current) return
-      const rect = ref.current.getBoundingClientRect()
-      const centerX = rect.left + rect.width / 2
-      const centerY = rect.top + rect.height / 2
+    if (isAnimating) return
 
-      // Calculate distance from center to mouse
-      const dx = e.clientX - centerX
-      const dy = e.clientY - centerY
+    const updateTime = () => {
+      const now = new Date()
+      const seconds = now.getSeconds() + now.getMilliseconds() / 1000
+      const minutes = now.getMinutes() + seconds / 60
+      const hours = (now.getHours() % 12) + minutes / 60
 
-      // Limit the movement radius
-      const maxDistance = 5
-      const distance = Math.sqrt(dx * dx + dy * dy)
-      const scale = Math.min(distance, 100) / 100 // Scale effect based on distance
-
-      const limitedX = (dx / distance) * Math.min(distance, maxDistance) || 0
-      const limitedY = (dy / distance) * Math.min(distance, maxDistance) || 0
-
-      mouseX.set(limitedX)
-      mouseY.set(limitedY)
+      secondRotate.set(seconds * 6)
+      minuteRotate.set(minutes * 6)
+      hourRotate.set(hours * 30)
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [mouseX, mouseY])
+    const interval = setInterval(updateTime, 16) // ~60fps
+    updateTime() // Initial set
 
-  const springConfig = { damping: 25, stiffness: 150 }
-  const x = useSpring(mouseX, springConfig)
-  const y = useSpring(mouseY, springConfig)
+    return () => clearInterval(interval)
+  }, [isAnimating, secondRotate, minuteRotate, hourRotate])
 
-  const toggleMood = () => {
-    const moods: ("neutral" | "happy" | "laugh" | "angry")[] = ["neutral", "happy", "laugh", "angry"]
-    const currentIndex = moods.indexOf(mood)
-    const nextMood = moods[(currentIndex + 1) % moods.length]
-    setMood(nextMood)
-  }
+  const handleHover = async () => {
+    if (isAnimating) return
+    setIsAnimating(true)
 
-  // Mouth paths for different moods
-  const mouthPaths = {
-    neutral: "M 9 22 Q 16 22 23 22", // Straight line
-    happy: "M 9 20 Q 16 28 23 20", // Smile
-    laugh: "M 9 20 Q 16 30 23 20 Z", // Open mouth
-    angry: "M 9 24 Q 16 18 23 24", // Frown
+    // 1. Animate to 12 o'clock (360 or 0 degrees visually)
+    // We animate to the next full rotation + 0 relative to current to avoid counter-clockwise spin
+    const currentSec = secondRotate.get()
+    const currentMin = minuteRotate.get()
+    const currentHour = hourRotate.get()
+
+    // Calculate target: nearest 360 multiple that is "12 o'clock" (0 deg mod 360)
+    // Actually, simpler to just animate to a fixed "12:00:00" visual state.
+    // Let's spin them all fast to a clean 0/360 state.
+    
+    await Promise.all([
+      animate(secondRotate, currentSec + 360 - (currentSec % 360), { duration: 0.6, ease: "easeInOut" }),
+      animate(minuteRotate, currentMin + 360 - (currentMin % 360), { duration: 0.6, ease: "easeInOut" }),
+      animate(hourRotate, currentHour + 360 - (currentHour % 360), { duration: 0.6, ease: "easeInOut" })
+    ])
+
+    // Pause at 12
+    await new Promise(r => setTimeout(r, 200))
+
+    // 2. Reset to correct time
+    const now = new Date()
+    const s = now.getSeconds() + now.getMilliseconds() / 1000
+    const m = now.getMinutes() + s / 60
+    const h = (now.getHours() % 12) + m / 60
+
+    // Ensure we rotate *forward* to the time, or just snap/spring back?
+    // "reset to correct time" - let's spring back smoothly.
+    // We need to animate to the absolute values. 
+    // Since we are at (N * 360), we calculate the target rotation relative to that base.
+    // e.g. target = (currentBase) + timeRotation
+    
+    const baseSec = Math.ceil(secondRotate.get() / 360) * 360
+    const baseMin = Math.ceil(minuteRotate.get() / 360) * 360
+    const baseHour = Math.ceil(hourRotate.get() / 360) * 360
+
+    await Promise.all([
+      animate(secondRotate, baseSec + (s * 6), { duration: 0.8, type: "spring", bounce: 0.4 }),
+      animate(minuteRotate, baseMin + (m * 6), { duration: 0.8, type: "spring", bounce: 0.4 }),
+      animate(hourRotate, baseHour + (h * 30), { duration: 0.8, type: "spring", bounce: 0.4 })
+    ])
+
+    setIsAnimating(false)
   }
 
   return (
     <motion.div
-      ref={ref}
       className="cursor-pointer p-2"
-      onClick={(e) => {
-        e.stopPropagation()
-        toggleMood()
-      }}
-      onHoverStart={() => mood === "neutral" && setMood("happy")}
-      onHoverEnd={() => mood === "happy" && setMood("neutral")}
-      whileHover={{ scale: 1.1 }}
+      onMouseEnter={handleHover}
       whileTap={{ scale: 0.9 }}
+      aria-label="Real-time analog clock"
     >
-      <svg width="32" height="32" viewBox="0 0 32 32" className="stroke-[var(--renor-orange)] stroke-[2px] fill-none">
-        {/* Face Outline - Minimal circle */}
-        <circle cx="16" cy="16" r="15" className="opacity-20" />
-
-        {/* Eyes Container */}
-        <motion.g style={{ x, y }}>
-          {/* Left Eye */}
-          <circle cx="10" cy="12" r="2" className="fill-[var(--renor-orange)] stroke-none" />
-          {/* Right Eye */}
-          <circle cx="22" cy="12" r="2" className="fill-[var(--renor-orange)] stroke-none" />
-
-          {/* Angry Eyebrows */}
-          <motion.path
-            initial={false}
-            animate={{ opacity: mood === "angry" ? 1 : 0, pathLength: mood === "angry" ? 1 : 0 }}
-            d="M 7 9 L 13 11 M 19 11 L 25 9"
-            className="stroke-[var(--renor-orange)] stroke-[1.5px]"
+      <svg width="40" height="40" viewBox="0 0 40 40" className="overflow-visible">
+        {/* Clock Face */}
+        <circle cx="20" cy="20" r="19" className="fill-background stroke-[var(--renor-orange)] stroke-[1.5px]" />
+        
+        {/* Ticks */}
+        {[...Array(12)].map((_, i) => (
+          <line
+            key={i}
+            x1="20" y1="4" x2="20" y2={i % 3 === 0 ? "7" : "5"}
+            transform={`rotate(${i * 30} 20 20)`}
+            className={i % 3 === 0 ? "stroke-foreground stroke-[1.5px]" : "stroke-muted-foreground stroke-[1px]"}
           />
-        </motion.g>
+        ))}
 
-        {/* Mouth */}
-        <motion.path
-          d={mouthPaths[mood]}
-          initial={false}
-          animate={{ d: mouthPaths[mood] }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className={`stroke-[var(--renor-orange)] stroke-[2px] ${mood === "laugh" ? "fill-[var(--renor-orange)]/10" : "fill-none"}`}
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        {/* Hour Hand */}
+        <motion.line
+          x1="20" y1="20" x2="20" y2="10"
+          style={{ rotate: hourRotate, originX: 0.5, originY: 1 }}
+          className="stroke-foreground stroke-[2px] stroke-linecap-round"
         />
+
+        {/* Minute Hand */}
+        <motion.line
+          x1="20" y1="20" x2="20" y2="6"
+          style={{ rotate: minuteRotate, originX: 0.5, originY: 1 }}
+          className="stroke-foreground stroke-[1.5px] stroke-linecap-round"
+        />
+
+        {/* Second Hand */}
+        <motion.line
+          x1="20" y1="24" x2="20" y2="5"
+          style={{ rotate: secondRotate, originX: 0.5, originY: 15/19 }}
+          className="stroke-[var(--renor-orange)] stroke-[1px]"
+        />
+        
+        {/* Center Pin */}
+        <circle cx="20" cy="20" r="1.5" className="fill-[var(--renor-orange)]" />
       </svg>
     </motion.div>
   )
@@ -192,10 +217,10 @@ export function AchievementsSection() {
                 className="h-full"
               >
                 <Card className="group dot-pattern relative h-full border-border bg-card p-8 transition-all hover:shadow-lg">
-                  {/* Added MoodEmoji to the 3rd card (index 2) */}
+                  {/* Added AnalogClock to the 3rd card (index 2) */}
                   {index === 2 && (
                     <div className="absolute top-4 right-4 z-30">
-                      <MoodEmoji />
+                      <AnalogClock />
                     </div>
                   )}
 
