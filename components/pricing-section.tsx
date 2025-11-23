@@ -88,18 +88,14 @@ export function PricingSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
-            <motion.div
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
-              className={`relative rounded-3xl p-8 border group ${
+              className={`relative rounded-3xl p-8 border group animate-fade-in-up ${
                 plan.dark
                   ? "bg-foreground text-background border-transparent shadow-xl"
                   : "bg-background text-foreground border-border shadow-sm hover:shadow-xl hover:border-black/5"
-              } flex flex-col transition-all duration-300`}
+              } flex flex-col transition-all duration-300 hover:-translate-y-2`}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {plan.popular && (
                 <div className="absolute top-6 right-6 bg-black text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
@@ -130,13 +126,10 @@ export function PricingSection() {
                 </p>
                 <div className={`h-px w-full mb-6 ${plan.dark ? "bg-white/10" : "bg-black/5"}`} />
                 <ul className="space-y-4">
-                  {plan.features.map((feature, i) => (
-                    <motion.li
+                  {plan.features.map((feature) => (
+                    <li
                       key={feature}
                       className="flex items-start gap-3 text-sm"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 + i * 0.05 }}
                     >
                       <div
                         className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
@@ -146,7 +139,7 @@ export function PricingSection() {
                         <Check className="w-3 h-3" strokeWidth={3} />
                       </div>
                       <span className={plan.dark ? "text-gray-300" : "text-muted-foreground"}>{feature}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -166,7 +159,7 @@ export function PricingSection() {
                   />
                 </Button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
