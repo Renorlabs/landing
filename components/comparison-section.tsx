@@ -5,7 +5,16 @@ import { Check, X, Sparkles } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 
-const comparisonData = [
+type ComparisonValue = string | { icon: boolean }
+
+type ComparisonRow = {
+  feature: string
+  renorlabs: ComparisonValue
+  fullTime: ComparisonValue
+  agencies: ComparisonValue
+}
+
+const comparisonData: ComparisonRow[] = [
   {
     feature: "Cost",
     renorlabs: "Predictable and efficient",
@@ -65,9 +74,10 @@ export function ComparisonSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="renor-section-header"
+          style={{ willChange: "opacity, transform" }}
         >
           <span className="mb-4 block text-xs font-medium uppercase tracking-widest text-muted-foreground">
             WHY CHOOSE US
@@ -79,9 +89,10 @@ export function ComparisonSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+          style={{ willChange: "opacity, transform" }}
         >
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -150,13 +161,14 @@ export function ComparisonSection() {
                 {comparisonData.map((row, index) => (
                   <motion.tr
                     key={row.feature}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                     onHoverStart={() => setHoveredRow(index)}
                     onHoverEnd={() => setHoveredRow(null)}
                     className="border-b border-border last:border-b-0 transition-all"
+                    style={{ willChange: "opacity, transform" }}
                   >
                     <td className="p-6 font-medium">
                       <motion.div
@@ -191,7 +203,7 @@ export function ComparisonSection() {
                             </motion.div>
                           </div>
                         ) : (
-                          <span className="text-sm font-medium">{row.renorlabs}</span>
+                          <span className="text-sm font-medium">{typeof row.renorlabs === "string" ? row.renorlabs : ""}</span>
                         )}
                       </motion.div>
                     </td>
@@ -202,7 +214,7 @@ export function ComparisonSection() {
                           <X className="h-5 w-5 text-red-600 opacity-50" />
                         </div>
                       ) : (
-                        <span className="text-sm text-muted-foreground">{row.fullTime}</span>
+                        <span className="text-sm text-muted-foreground">{typeof row.fullTime === "string" ? row.fullTime : ""}</span>
                       )}
                     </td>
 
@@ -212,7 +224,7 @@ export function ComparisonSection() {
                           <X className="h-5 w-5 text-red-600 opacity-50" />
                         </div>
                       ) : (
-                        <span className="text-sm text-muted-foreground">{row.agencies}</span>
+                        <span className="text-sm text-muted-foreground">{typeof row.agencies === "string" ? row.agencies : ""}</span>
                       )}
                     </td>
                   </motion.tr>

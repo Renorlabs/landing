@@ -73,7 +73,7 @@ export function FAQSection() {
   const [typingState, setTypingState] = useState<"idle" | "typing" | "sent">("idle")
   const [visibleChars, setVisibleChars] = useState(0)
 
-  const text = "Hey, Renorlabs! Let's Build Together."
+  const text = "Hey, Renorlabs! Let's Build Together"
 
   useEffect(() => {
     if (isContactHovered) {
