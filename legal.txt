@@ -1,0 +1,259 @@
+## PRIVACY POLICY FOR RENORLABS
+
+**Last Updated:** [Insert Date]
+
+**Entity:** Renorlabs Private Limited (“Renorlabs”, “we”, “our”, “us”)
+
+**Website:** renorlabs.com
+
+### 1. Introduction
+
+This Privacy Policy explains how Renorlabs collects, uses, stores, shares, and protects personal information when you visit renorlabs.com or interact with us.
+
+We follow global data protection requirements including the India DPDP Act 2023, GDPR (EU), and CCPA (California, USA).
+
+By using our website, you agree to this Policy.
+
+### 2. What Information We Collect
+
+We collect two types of information:
+
+**A. Information you provide directly**
+
+• Name
+
+• Email
+
+• Company name
+
+• Project details shared through contact forms
+
+• Any materials shared voluntarily
+
+**B. Information collected automatically**
+
+• IP address
+
+• Device information
+
+• Browser type
+
+• Pages viewed
+
+• Time spent
+
+• Cookies and analytics data (Google Analytics, Meta Pixel or similar tools)
+
+We do not collect sensitive personal data unless you voluntarily submit it.
+
+### 3. How We Use Your Information
+
+We use your information to:
+
+• Respond to enquiries
+
+• Provide service proposals
+
+• Improve website performance
+
+• Understand visitor behaviour
+
+• Maintain website security
+
+• Comply with legal obligations
+
+We do not sell or rent your personal information.
+
+### 4. Legal Basis for Processing (GDPR)
+
+For visitors from the EU/UK, we process personal data on the basis of:
+
+• Legitimate interest
+
+• Performance of a contract (when we engage with you)
+
+• Consent (for cookies and newsletter opt-ins)
+
+### 5. How We Share Information
+
+We may share information with:
+
+• Hosting providers
+
+• Analytics platforms
+
+• Email and CRM tools (e.g., Google Workspace, Notion, HubSpot etc.)
+
+• Legal, accounting, or compliance advisors
+
+We do not share data with third parties for advertising without consent.
+
+### 6. International Data Transfers
+
+Your data may be processed outside your jurisdiction. We ensure appropriate safeguards such as contractual protections and secure data storage.
+
+### 7. Data Retention
+
+We keep personal data only for as long as required:
+
+• Website analytics: 12–24 months
+
+• Contact form submissions: 3 years
+
+• Legal compliance: as required by law
+
+### 8. Your Rights
+
+Depending on your jurisdiction, you may have the right to:
+
+• Access your data
+
+• Request correction or deletion
+
+• Withdraw consent
+
+• Request a copy of your data
+
+• Object to processing
+
+• File a complaint with a data authority
+
+To exercise your rights, contact us at: **legal@renorlabs.com**
+
+### 9. Cookies
+
+We use cookies to improve user experience, analyze traffic, and optimize website performance.
+
+See our Cookie Policy below.
+
+### 10. Data Security
+
+We use reasonable technical and organizational measures including encryption, access controls, and secure storage systems.
+
+### 11. Third-Party Links
+
+Our website may link to external websites. We are not responsible for how those websites handle data.
+
+### 12. Updates to this Policy
+
+We may update this Policy from time to time. Updates will be posted on this page with a new “Last Updated” date.
+
+### 13. Contact Us
+
+For any questions regarding privacy, write to:
+
+Email: **legal@renorlabs.com**
+
+---
+
+## TERMS OF USE FOR RENORLABS
+
+**Effective Date:** [Insert Date]
+
+### 1. Acceptance of Terms
+
+By accessing renorlabs.com, you agree to these Terms of Use.
+
+If you do not agree, do not use the website.
+
+### 2. Ownership and Intellectual Property
+
+All content on renorlabs.com including text, graphics, branding, logos, layouts, designs, and digital assets is owned or licensed by Renorlabs.
+
+You may not copy, reproduce, modify, or distribute any content without written permission.
+
+### 3. Permitted Use
+
+You may use the website only for:
+
+• Learning about Renorlabs
+
+• Contacting us for services
+
+• Viewing published resources
+
+Any misuse such as scraping, attempting to hack, duplicating content, or interfering with the website is prohibited.
+
+### 4. No Warranties
+
+This website is provided on an “as is” basis.
+
+We do not guarantee accuracy, completeness, uninterrupted access, or error-free content.
+
+### 5. Limitation of Liability
+
+Renorlabs is not liable for any direct, indirect, incidental, or consequential damages resulting from:
+
+• Use of the website
+
+• Inability to use the website
+
+• Errors or omissions in content
+
+• Loss of data or profits
+
+Our total liability will not exceed INR 1,000.
+
+### 6. Third-Party Tools and Integrations
+
+We may use third-party tools such as analytics and embedded content.
+
+These are governed by their individual terms.
+
+### 7. Links to Third-Party Sites
+
+Renorlabs is not responsible for content on external sites.
+
+### 8. Governing Law
+
+These Terms are governed by laws of India.
+
+Disputes will be resolved in courts of Bengaluru, Karnataka, unless otherwise agreed.
+
+### 9. Changes to Terms
+
+Renorlabs may update these Terms at any time. Continued use of the website indicates acceptance of the updated Terms.
+
+### 10. Contact
+
+For any issues or clarifications: **legal@renorlabs.com**
+
+---
+
+## COOKIE POLICY FOR RENORLABS
+
+### 1. What Are Cookies
+
+Cookies are small files stored on your device to help websites function effectively and analyze usage.
+
+### 2. How We Use Cookies
+
+Renorlabs uses cookies to:
+
+• Improve website speed and performance
+
+• Analyze traffic
+
+• Customize experience
+
+• Run security features
+
+### 3. Types of Cookies We Use
+
+- Essential cookies
+
+• Analytics cookies (Google Analytics or similar)
+
+• Functional cookies
+
+• Marketing cookies (only if implemented later)
+
+### 4. Managing Cookies
+
+You can control or disable cookies through your browser settings.
+
+Visitors from the EU/UK will see a cookie consent banner as required by GDPR.
+
+### 5. Updates
+
+This Cookie Policy may be updated periodically.
