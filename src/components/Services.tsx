@@ -18,7 +18,8 @@ const services = [
       'Brand Strategy'
     ],
     images: [
-      './rock.png',
+      './building1.png',
+      './building2.png',
     ]
   },
 
@@ -35,8 +36,8 @@ const services = [
       'User Research'
     ],
     images: [
-      'https://cosmos.so/api/image/980384645',
-      'https://cosmos.so/api/image/867651876'
+      './design1.png',
+      './design2.png',
     ]
   },
 
@@ -53,8 +54,8 @@ const services = [
       'Long Term Product Roadmaps'
     ],
     images: [
-      'https://cosmos.so/api/image/1935260750',
-      'https://cosmos.so/api/image/1516216588'
+      './engineering1.png',
+      './engineering2.png',
     ]
   },
 
@@ -71,8 +72,8 @@ const services = [
       'Market Research'
     ],
     images: [
-      'https://cosmos.so/api/image/1877684951',
-      'https://cosmos.so/api/image/1067858081'
+      './growth1.png',
+      './growth2.png',
     ]
   }
 ];
