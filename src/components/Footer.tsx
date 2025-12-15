@@ -80,7 +80,7 @@ export function Footer() {
           className="lg:col-span-4 p-6 md:p-8 lg:p-0"
         >
           <img 
-            src="/footer.png" 
+            src="/footer.webp" 
             alt="Renor Systems" 
             className="w-full h-full object-contain lg:object-cover"
             loading="lazy"

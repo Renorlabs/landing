@@ -76,7 +76,7 @@ export function StudioReveal() {
             className="relative z-10 overflow-hidden shadow-2xl"
         >
             <motion.img 
-                src="./fuji.png" 
+                src="./fuji.webp" 
                 alt="Studio Reveal" 
                 style={{ scale: imageScale }}
                 className="w-full h-full object-cover"

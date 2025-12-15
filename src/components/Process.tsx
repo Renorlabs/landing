@@ -12,7 +12,7 @@ const processes = [
     gradient: 'from-[#ff4d00] to-[#ff6d33]',
     color: '#ff4d00',
     pastelColor: '#1a1a1a',
-    frontImage: '/p1.png'
+    frontImage: '/p1.webp'
   },
   {
     category: 'Digital',
@@ -22,7 +22,7 @@ const processes = [
     gradient: 'from-[#0066ff] to-[#3385ff]',
     color: '#0066ff',
     pastelColor: '#1a1a1a',
-    frontImage: '/p2.png'
+    frontImage: '/p2.webp'
   },
   {
     category: 'Brand',
@@ -32,7 +32,7 @@ const processes = [
     gradient: 'from-[#ffea00] to-[#fff033]',
     color: '#ffea00',
     pastelColor: '#1a1a1a',
-    frontImage: '/p3.png'
+    frontImage: '/p3.webp'
   }
 ];
 
@@ -324,7 +324,7 @@ function ProcessCard({ process, index }: { process: typeof processes[0], index: 
             <div className="process-card-back">
               <div className="w-full h-full relative overflow-hidden">
                 <img 
-                  src={index === 0 ? '/f1.png' : index === 1 ? '/f2.png' : '/f3.png'}
+                  src={index === 0 ? '/f1.webp' : index === 1 ? '/f2.webp' : '/f3.webp'}
                   alt={process.title}
                   className="w-full h-full object-cover"
                   style={{ objectFit: 'cover' }}

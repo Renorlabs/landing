@@ -28,7 +28,7 @@ const projects: Project[] = [
     title: 'ArLink',
     subtitle: 'Permanent Deployments, Reimagined',
     description: 'We partnered with ArLink to design and build a seamless deployment platform for the Arweave ecosystem. From early concept to a polished, production ready product, we shaped the brand, the landing experience, and the entire dashboard interface. ArLink later secured a 10k ecosystem grant as a result of the clarity and strength of the product.',
-    image: '/project1.png',
+    image: '/project1.webp',
     alt: 'ArLink deployment platform',
     ctaText: 'View Case Study',
     path: '/case-study/arlink'
@@ -39,7 +39,7 @@ const projects: Project[] = [
     title: 'Building the Interaction Layer for Human AI Communication',
     subtitle: 'Designing an intelligent messaging infrastructure from the ground up',
     description: 'A confidential engagement with an AI startup working on a protocol layer that enables text, voice, and generated media interactions. We shaped the system architecture, designed the dashboard, and helped build early distribution channels.',
-    image: '/project2.png',
+    image: '/project2.webp',
     alt: 'AI communication platform',
     ctaText: 'View Case Study',
     path: '/case-study/anonymous'

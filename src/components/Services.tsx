@@ -18,8 +18,8 @@ const services = [
       'Brand Strategy'
     ],
     images: [
-      './building1.png',
-      './building2.png',
+      './building1.webp',
+      './building2.webp',
     ]
   },
 
@@ -54,8 +54,8 @@ const services = [
       'Long Term Product Roadmaps'
     ],
     images: [
-      './engineering1.png',
-      './engineering2.png',
+      './engineering1.webp',
+      './engineering2.webp',
     ]
   },
 
@@ -72,8 +72,8 @@ const services = [
       'Market Research'
     ],
     images: [
-      './growth1.png',
-      './growth2.png',
+      './growth1.webp',
+      './growth2.webp',
     ]
   }
 ];

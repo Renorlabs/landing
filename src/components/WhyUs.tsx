@@ -71,7 +71,7 @@ export function WhyUs() {
           {/* Top Image Section */}
           <div className="w-full aspect-[4/3] rounded-lg mb-4 overflow-hidden">
             <img 
-              src="/orbit.jpeg" 
+              src="/orbit.webp" 
               alt="Orbit" 
               className="w-full h-full object-cover"
             />
@@ -130,7 +130,7 @@ export function WhyUs() {
           {/* Image */}
           <div className="w-full h-full rounded-xl overflow-hidden">
             <img 
-              src="/image.png" 
+              src="/image.webp" 
               alt="Infinity symbol" 
               className="w-full h-full object-cover"
             />
@@ -163,7 +163,7 @@ export function WhyUs() {
           {/* Top Image Section */}
           <div className="w-full aspect-[4/3] rounded-lg mb-4 overflow-hidden">
             <img 
-              src="/Element 2001625943.jpeg" 
+              src="/Element 2001625943.webp" 
               alt="Element" 
               className="w-full h-full object-cover"
             />
