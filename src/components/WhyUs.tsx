@@ -74,6 +74,8 @@ export function WhyUs() {
               src="/orbit.webp" 
               alt="Orbit" 
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -133,6 +135,8 @@ export function WhyUs() {
               src="/image.webp" 
               alt="Infinity symbol" 
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -166,6 +170,8 @@ export function WhyUs() {
               src="/Element 2001625943.webp" 
               alt="Element" 
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

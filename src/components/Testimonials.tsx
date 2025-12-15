@@ -102,7 +102,7 @@ export function Testimonials() {
       controls.start({
         x: '-50%',
         transition: {
-          duration: 50,
+          duration: 35,
           ease: 'linear',
           repeat: Infinity,
         }
@@ -139,10 +139,10 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#252525] leading-[1.1] max-w-4xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#252525] leading-[1.1] max-w-4xl">
           What it feels like to{' '}
             <span className="text-[#252525]/40">work with Renor</span>
-          </h1>
+          </h2>
         </motion.div>
       </div>
 
@@ -150,7 +150,7 @@ export function Testimonials() {
       <div className="bg-[#262626] rounded-2xl md:rounded-3xl px-6 md:px-8 lg:px-12 py-12 md:py-16 mb-12 md:mb-16">
         {/* Testimonials Auto-Scroll with Pause on Hover */}
         <div 
-          className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]"
+          className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_4%,black_96%,transparent_100%)]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

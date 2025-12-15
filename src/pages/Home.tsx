@@ -4,7 +4,6 @@ import { About } from '../components/About'
 import { Testimonials } from '../components/Testimonials'
 import { MobileHome } from '../components/MobileHome'
 import { MobileFooter } from '../components/MobileFooter'
-import { SmoothScroll } from '../components/SmoothScroll'
 import { useInView } from 'framer-motion'
 import { useRef, lazy, Suspense } from 'react'
 
@@ -30,52 +29,50 @@ export function Home() {
   const isStudioRevealInView = useInView(studioRevealRef, { amount: 0.3 })
 
   return (
-    <SmoothScroll>
-      <div className="min-h-screen w-full bg-[#faf8f5] text-[#252525] font-sans selection:bg-[#252525] selection:text-[#faf8f5]">
-        {/* Mobile/Tablet Version - Shows on small and medium screens (mobile, iPad, tablets), hidden on lg and above */}
-        <div className="lg:hidden">
-          <MobileHome isLoaded={true} />
-          <Suspense fallback={<ComponentLoader />}>
-            <MobileFooter />
-          </Suspense>
-        </div>
-
-        {/* Desktop Version - Hidden on small/medium screens, shows on lg and above (desktop/laptop) */}
-        <div className="hidden lg:block">
-          <Navbar visible={!isStudioRevealInView} isLoaded={true} />
-          <main>
-            <Hero isLoaded={true} />
-            <div ref={studioRevealRef}>
-              <Suspense fallback={<ComponentLoader />}>
-                <StudioReveal />
-              </Suspense>
-            </div>
-            <About />
-            <Suspense fallback={<ComponentLoader />}>
-              <Services />
-            </Suspense>
-            <Suspense fallback={<ComponentLoader />}>
-              <Process />
-            </Suspense>
-            <Suspense fallback={<ComponentLoader />}>
-              <WhyUs />
-            </Suspense>
-            <Suspense fallback={<ComponentLoader />}>
-              <OurWork />
-            </Suspense>
-            <Testimonials />
-            <Suspense fallback={<ComponentLoader />}>
-              <Pricing />
-            </Suspense>
-            <Suspense fallback={<ComponentLoader />}>
-              <FAQ />
-            </Suspense>
-            <Suspense fallback={<ComponentLoader />}>
-              <Footer />
-            </Suspense>
-          </main>
-        </div>
+    <div className="min-h-screen w-full bg-[#faf8f5] text-[#252525] font-sans selection:bg-[#252525] selection:text-[#faf8f5]">
+      {/* Mobile/Tablet Version - Shows on small and medium screens (mobile, iPad, tablets), hidden on lg and above */}
+      <div className="lg:hidden">
+        <MobileHome isLoaded={true} />
+        <Suspense fallback={<ComponentLoader />}>
+          <MobileFooter />
+        </Suspense>
       </div>
-    </SmoothScroll>
+
+      {/* Desktop Version - Hidden on small/medium screens, shows on lg and above (desktop/laptop) */}
+      <div className="hidden lg:block">
+        <Navbar visible={!isStudioRevealInView} isLoaded={true} />
+        <main>
+          <Hero isLoaded={true} />
+          <div ref={studioRevealRef}>
+            <Suspense fallback={<ComponentLoader />}>
+              <StudioReveal />
+            </Suspense>
+          </div>
+          <About />
+          <Suspense fallback={<ComponentLoader />}>
+            <Services />
+          </Suspense>
+          <Suspense fallback={<ComponentLoader />}>
+            <Process />
+          </Suspense>
+          <Suspense fallback={<ComponentLoader />}>
+            <WhyUs />
+          </Suspense>
+          <Suspense fallback={<ComponentLoader />}>
+            <OurWork />
+          </Suspense>
+          <Testimonials />
+          <Suspense fallback={<ComponentLoader />}>
+            <Pricing />
+          </Suspense>
+          <Suspense fallback={<ComponentLoader />}>
+            <FAQ />
+          </Suspense>
+          <Suspense fallback={<ComponentLoader />}>
+            <Footer />
+          </Suspense>
+        </main>
+      </div>
+    </div>
   )
 }

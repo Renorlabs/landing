@@ -38,7 +38,7 @@ export function MobileHome({ isLoaded = false }: MobileHomeProps) {
         >
           <div className="w-16 h-16 md:w-20 md:h-20">
             <img 
-              src="/renor-logo.png" 
+              src="/renor-logo.webp" 
               alt="Renor Logo" 
               className="w-full h-full object-contain" 
               loading="eager" 

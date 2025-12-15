@@ -109,7 +109,7 @@ export function Navbar({ visible = true, isLoaded = false }: NavbarProps) {
         {/* Logo Section - Pointer events auto to allow clicking if needed */}
         <div className="flex flex-col items-center gap-0.3 pointer-events-auto">
           <div className="w-8 h-8 relative">
-             <img src="/renor-logo.png" alt="Renor Logo" className="w-full h-full object-contain" loading="eager" decoding="sync" />
+             <img src="/renor-logo.webp" alt="Renor Logo" className="w-full h-full object-contain" loading="eager" decoding="sync" />
           </div>
           {/* Gradient Line */}
           <div className="h-[2.5px] w-[85%] bg-gradient-to-r from-[#ff4d00] via-[#ffea00] to-[#0066ff]" />

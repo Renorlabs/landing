@@ -24,9 +24,11 @@ export function MobileFooter() {
           <div className="flex flex-col items-center gap-1">
             <div className="w-8 h-8 md:w-10 md:h-10">
               <img 
-                src="/renor-logo.png" 
+                src="/renor-logo.webp" 
                 alt="Renor Logo" 
                 className="w-full h-full object-contain brightness-0 invert" 
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="h-[2px] w-[85%] bg-gradient-to-r from-[#ff4d00] via-[#ffea00] to-[#0066ff]" />

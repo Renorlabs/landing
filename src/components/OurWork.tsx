@@ -30,7 +30,7 @@ const projects: Project[] = [
     description: 'We partnered with ArLink to design and build a seamless deployment platform for the Arweave ecosystem. From early concept to a polished, production ready product, we shaped the brand, the landing experience, and the entire dashboard interface. ArLink later secured a 10k ecosystem grant as a result of the clarity and strength of the product.',
     image: '/project1.webp',
     alt: 'ArLink deployment platform',
-    ctaText: 'View Case Study',
+    ctaText: 'View Case Study: ArLink',
     path: '/case-study/arlink'
   },
   {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: 'A confidential engagement with an AI startup working on a protocol layer that enables text, voice, and generated media interactions. We shaped the system architecture, designed the dashboard, and helped build early distribution channels.',
     image: '/project2.webp',
     alt: 'AI communication platform',
-    ctaText: 'View Case Study',
+    ctaText: 'View Case Study: Anonymous',
     path: '/case-study/anonymous'
   }
 ]
@@ -79,7 +79,7 @@ export function OurWork() {
 
         {/* Header Section */}
         <div className="relative flex h-[30vh] items-center justify-start mb-6 md:mb-8">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -88,7 +88,7 @@ export function OurWork() {
           >
             Winning Projects{' '}
             <span className="text-[#252525]/40">we've delivered</span>
-          </motion.h1>
+          </motion.h2>
         </div>
       </div>
 
@@ -164,6 +164,8 @@ function ProjectItem({ project, isLast }: { project: typeof projects[0], index: 
               src={project.image}
               alt={project.alt}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
             {/* View More Details Button */}
             {project.path ? (

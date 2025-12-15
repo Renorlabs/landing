@@ -147,7 +147,7 @@ export function Services() {
 
       {/* Header Section */}
       <div className="relative flex h-[30vh] items-center justify-start mb-6 md:mb-8">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -156,7 +156,7 @@ export function Services() {
         >
           From first step to{' '}
           <span className="text-[#252525]/40">full scale</span>
-        </motion.h1>
+        </motion.h2>
       </div>
 
       {/* Box Container */}

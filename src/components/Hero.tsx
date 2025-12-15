@@ -101,7 +101,10 @@ export function Hero({ isLoaded = false }: HeroProps) {
                         }}
                     >
                         {MARQUEE_WORDS.map((word, i) => (
-                            <span key={i} className="text-lg md:text-xl lg:text-2xl font-bold text-[#5f6163]/50 tracking-widest">
+                            <span 
+                              key={i} 
+                              className="text-lg md:text-xl lg:text-2xl font-bold text-[#252525] tracking-widest"
+                            >
                                 {word}
                             </span>
                         ))}
@@ -120,7 +123,10 @@ export function Hero({ isLoaded = false }: HeroProps) {
                         }}
                     >
                         {MARQUEE_WORDS.map((word, i) => (
-                            <span key={`row2-${i}`} className="text-lg md:text-xl lg:text-2xl font-bold text-[#5f6163]/40 tracking-widest">
+                            <span 
+                              key={`row2-${i}`} 
+                              className="text-lg md:text-xl lg:text-2xl font-bold text-[#252525]/85 tracking-widest"
+                            >
                                 {word}
                             </span>
                         ))}

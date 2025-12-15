@@ -175,7 +175,13 @@ export function Footer() {
             >
               <div className="flex flex-col items-center gap-0.5">
                 <div className="w-5 h-5">
-                  <img src="/renor-logo.png" alt="Renor Logo" className="w-full h-full object-contain brightness-0 invert" />
+                  <img 
+                    src="/renor-logo.webp" 
+                    alt="Renor Logo" 
+                    className="w-full h-full object-contain brightness-0 invert" 
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="h-[2px] w-[85%] bg-gradient-to-r from-[#ff4d00] via-[#ffea00] to-[#0066ff]" />
               </div>
