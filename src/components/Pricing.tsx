@@ -160,7 +160,7 @@ const plans: PricingPlan[] = [
     priceUnit: "/month",
     description: "Best for founders building their first real product.",
     features: [
-      "MVP design and development",
+      "Product design and development",
       "Ideation and initial market research",
       "Bi-weekly progress meetings",
       "SEO setup and ongoing management",
